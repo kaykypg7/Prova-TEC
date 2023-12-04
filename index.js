@@ -83,8 +83,80 @@ var caixa = document.getElementById('caixa')
 
 const pQ7 = document.querySelectorAll('.pQuestao7')
 for (let i = 0; i < pQ7.length; i++) {
-    pQ7[i].style.backgroundColor = 'yellow'
+    pQ7[i].style.backgroundColor = 'yellow'}
 
-}
+// 8
+
+var box = document.querySelector('.box');
+box.addEventListener('mousedown', ()=>{
+    box.innerHTML = 'Clicou e segurou'
+    box.style.backgroundColor = 'yellow'
+box.addEventListener('mouseup' , ()=>{
+    box.innerHTML = 'Soltou'
+    box.style.backgroundColor = 'red'
+})
+})
+
+// 9
+
+const inpSalario = document.querySelector('.inputSalario')
+const btnSalario = document.querySelector('.btnSalario')
+var pSalario = document.querySelector('.rSalario')
+
+btnSalario.addEventListener('click', ()=>{
+    valor_input = Number(inpSalario.value)
+
+    if(valor_input >= 100000){
+        pSalario.innerHTML = "Rico"
+    }
+    else if(valor_input >= 50000){
+        pSalario.innerHTML = "Classe Alta"
+        
+    }
+    else if(valor_input >= 15000){
+        pSalario.innerHTML = "Classe Media"
+    }
+    else if(valor_input >= 5000){
+        pSalario.innerHTML = "Bem de vida"
+    }
+    else{
+        pSalario.innerHTML = "Pobre"
+    }
+    
+})
+
+// 11
+
+var btnTroca = document.querySelector('.btnNome')
+var txtNome = document.querySelector('.snome')
+var txtTime = document.querySelector('.stime')
+var spanm = document.querySelector('.spanmudar')
+var divCont = document.querySelector('.conteiner')
+var valor_nome = txtNome.textContent
+
+    if(valor_nome === 'Joao'){
+    divCont.style.backgroundColor ='green'
+    }
+
+btnTroca.addEventListener('click', () => {
+    const valor_nome = txtNome.textContent;
+    var valor_btn = spanm.innerHTML;
+
+    if (valor_nome === 'Joao') {
+        txtNome.innerHTML = 'Maria'
+        txtTime.innerHTML = 'Santos'
+        divCont.style.backgroundColor = 'black'
+    } else if (valor_nome === 'Maria') {
+        txtTime.innerHTML = 'Palmeiras'
+        txtNome.innerHTML = 'Joao'
+        divCont.style.backgroundColor = 'green'
+    }
+
+    if (valor_btn === 'Ir para Joao') {
+        spanm.innerHTML = 'Ir para Maria';
+    } else if (valor_btn === 'Ir para Maria') {
+        spanm.innerHTML = 'Ir para Joao';
+    }
+});
 
 
